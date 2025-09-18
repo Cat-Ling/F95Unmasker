@@ -1,14 +1,13 @@
-/* F95Zone.to Google-like Theme */
+/* F95Zone.to Google-like Dark Theme */
 
 :root {
-  --google-blue: #4285F4;
-  --google-red: #DB4437;
-  --google-yellow: #F4B400;
-  --google-green: #0F9D58;
-  --google-gray: #5f6368;
-  --google-light-gray: #dfe1e5;
-  --google-white: #ffffff;
-  --google-background: #f1f3f4;
+  /* Google Dark Theme Palette */
+  --google-dark-background: #202124;
+  --google-dark-surface: #303134;
+  --google-dark-primary-text: #e8eaed;
+  --google-dark-secondary-text: #969ba1;
+  --google-dark-border: #5f6368;
+  --google-accent-blue: #8ab4f8;
   --google-font: 'Roboto', sans-serif;
 }
 
@@ -16,290 +15,212 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
-  background-color: var(--google-white) !important;
+  background: var(--google-dark-background) !important;
   font-family: var(--google-font) !important;
-  color: var(--google-gray) !important;
+  color: var(--google-dark-primary-text) !important;
 }
 
-/* Main page wrapper */
 .p-pageWrapper {
-  background-color: var(--google-white) !important;
-  border: 1px solid var(--google-light-gray) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15) !important;
-  margin: 20px auto !important;
-  max-width: 1200px !important;
+    background: var(--google-dark-background) !important;
 }
 
 a {
-  color: var(--google-blue) !important;
-  text-decoration: none !important;
+  color: var(--google-accent-blue) !important;
 }
 
-a:hover {
-  text-decoration: underline !important;
+/* Set surface color for content blocks */
+.block-container, .block-body, .p-body-inner {
+    background-color: var(--google-dark-surface) !important;
+    border-color: var(--google-dark-border) !important;
 }
 
-/* Remove default backgrounds from main elements */
-.p-body-inner, .p-body, .p-content-inner {
-    background: transparent !important;
+/* --- Header & Navigation --- */
+
+.p-header, .p-nav {
+    background: var(--google-dark-surface) !important;
+    border-bottom: 1px solid var(--google-dark-border) !important;
 }
 
-/* --- Header and Navigation --- */
-
-/* Header container */
-.p-header {
-  background-color: var(--google-white) !important;
-  border-bottom: 1px solid var(--google-light-gray) !important;
-  padding: 10px 0 !important;
-}
-
-/* Hide the original logo image */
+/* Hide original logo */
 .p-header-logo img {
-  display: none !important;
+    display: none !important;
 }
 
-/* Create a text-based logo */
+/* Create text-based logo */
 .p-header-logo::before {
-  content: 'F95zone';
-  font-size: 24px !important;
-  font-weight: 700 !important;
-  color: var(--google-gray) !important;
-  font-family: var(--google-font) !important;
+    content: 'F95zone';
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: var(--google-dark-primary-text) !important;
+    font-family: var(--google-font) !important;
+    padding: 0 10px;
 }
 
-/* Navigation bar */
-.p-nav {
-  background: transparent !important;
-  border-bottom: none !important;
+.p-navEl-link {
+    color: var(--google-dark-secondary-text) !important;
+    transition: color 0.3s ease !important;
 }
 
-.p-nav-inner {
-  padding: 0 !important;
+.p-navEl-link:hover {
+    color: var(--google-dark-primary-text) !important;
+    text-decoration: none !important;
 }
 
-/* Navigation links */
-.p-nav .p-nav-list .p-navEl-link {
-  color: var(--google-gray) !important;
-  border-radius: 4px !important;
-  transition: background-color 0.3s ease !important;
-  padding: 8px 12px !important;
-}
-
-.p-nav .p-nav-list .p-navEl-link:hover {
-  background-color: var(--google-background) !important;
-  text-decoration: none !important;
-}
-
-/* Active navigation link */
-.p-nav .p-nav-list .is-selected .p-navEl-link {
-  background-color: var(--google-blue) !important;
-  color: var(--google-white) !important;
-}
-
-/* Header buttons (Log in, Register) */
-.p-header-actions .button {
-  background-color: var(--google-blue) !important;
-  color: var(--google-white) !important;
-  border: none !important;
-  border-radius: 4px !important;
-  padding: 8px 16px !important;
-  font-weight: 500 !important;
-  transition: background-color 0.3s ease !important;
-}
-
-.p-header-actions .button:hover {
-  background-color: #3367d6 !important; /* A slightly darker blue */
+.p-navEl.is-selected .p-navEl-link {
+    color: var(--google-accent-blue) !important;
+    background: rgba(138, 180, 248, 0.1) !important;
+    border-radius: 4px;
 }
 
 /* --- Forum Listings --- */
 
-/* Main content area */
-.p-body-main {
-  padding: 20px !important;
-}
-
-/* Category headers */
 .block-header {
-  background-color: var(--google-background) !important;
-  color: var(--google-gray) !important;
-  border-bottom: 1px solid var(--google-light-gray) !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  padding: 12px 16px !important;
-  border-radius: 8px 8px 0 0 !important;
+    background: transparent !important;
+    color: var(--google-accent-blue) !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid var(--google-dark-border) !important;
+    padding: 16px !important;
 }
 
-/* Container for forum nodes */
-.block-container {
-  border: none !important;
-}
-
-/* Individual forum node (row) */
 .node {
-  display: flex !important;
-  align-items: center !important;
-  padding: 16px !important;
-  border-bottom: 1px solid var(--google-light-gray) !important;
-  transition: background-color 0.3s ease !important;
+    border-bottom: 1px solid var(--google-dark-border) !important;
+    padding: 16px !important;
 }
 
-.node:hover {
-  background-color: #f8f9fa !important;
+.node:last-of-type {
+    border-bottom: none !important;
 }
 
-.node:last-child {
-  border-bottom: none !important;
-}
-
-/* Forum icon */
-.node-icon {
-  font-size: 24px !important;
-  color: var(--google-blue) !important;
-  margin-right: 16px !important;
-}
-
-/* Main content of the forum node */
-.node-main {
-  flex-grow: 1 !important;
-}
-
-/* Forum title */
 .node-title a {
-  font-size: 18px !important;
-  font-weight: 500 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
 }
 
-/* Forum description */
 .node-description {
-  font-size: 14px !important;
-  color: var(--google-gray) !important;
+    font-size: 14px !important;
+    color: var(--google-dark-secondary-text) !important;
 }
 
-/* Stats (thread/message count) */
-.node-stats {
-  display: none !important; /* Hide stats for a cleaner look */
+.node-stats, .node-extra {
+    font-size: 13px !important;
+    color: var(--google-dark-secondary-text) !important;
 }
 
-/* Last post info */
-.node-extra {
-  flex-basis: 200px !important;
-  flex-shrink: 0 !important;
-  font-size: 13px !important;
-  color: var(--google-gray) !important;
-  text-align: right !important;
-}
+/* --- Sidebar & Footer --- */
 
-/* --- Sidebar and Footer --- */
-
-/* Sidebar container */
-.p-sidebar {
-  padding: 20px !important;
-  background-color: var(--google-background) !important;
-  border-left: 1px solid var(--google-light-gray) !important;
-}
-
-/* Sidebar widget */
 .p-sidebar .block {
-  background-color: var(--google-white) !important;
-  border: 1px solid var(--google-light-gray) !important;
-  border-radius: 8px !important;
-  margin-bottom: 20px !important;
+    background: var(--google-dark-surface) !important;
+    border: 1px solid var(--google-dark-border) !important;
+    border-radius: 8px;
 }
 
-/* Sidebar widget header */
 .p-sidebar .block-header {
-  border-radius: 8px 8px 0 0 !important;
+    font-size: 16px !important;
+    padding: 16px !important;
 }
 
-/* Sidebar links */
-.p-sidebar .block-body a {
-  display: block !important;
-  padding: 8px 16px !important;
-  transition: background-color 0.3s ease !important;
-}
-
-.p-sidebar .block-body a:hover {
-  background-color: #f8f9fa !important;
-  text-decoration: none !important;
-}
-
-/* Footer */
 .p-footer {
-  background-color: var(--google-background) !important;
-  color: var(--google-gray) !important;
-  padding: 20px !important;
-  border-top: 1px solid var(--google-light-gray) !important;
-  font-size: 13px !important;
-}
-
-.p-footer a {
-  color: var(--google-gray) !important;
-  font-weight: 500 !important;
-}
-
-.p-footer a:hover {
-  color: var(--google-blue) !important;
-}
-
-/* --- General Refinements --- */
-
-/* Buttons */
-.button {
-  background-color: var(--google-blue) !important;
-  color: var(--google-white) !important;
-  border: none !important;
-  border-radius: 4px !important;
-  padding: 8px 16px !important;
-  font-weight: 500 !important;
-  transition: background-color 0.3s ease !important;
-}
-
-.button:hover {
-  background-color: #3367d6 !important; /* A slightly darker blue */
-}
-
-/* Input fields */
-.input {
-  background-color: var(--google-white) !important;
-  border: 1px solid var(--google-light-gray) !important;
-  border-radius: 4px !important;
-  padding: 8px 12px !important;
-  color: var(--google-gray) !important;
-}
-
-.input:focus {
-  border-color: var(--google-blue) !important;
-  box-shadow: 0 0 0 1px var(--google-blue) !important;
+    background: var(--google-dark-surface) !important;
+    border-top: 1px solid var(--google-dark-border) !important;
+    color: var(--google-dark-secondary-text) !important;
+    padding: 20px !important;
 }
 
 /* --- Thread/Post View --- */
 
-/* Post container */
 .message {
-  border: 1px solid var(--google-light-gray) !important;
-  border-radius: 8px !important;
-  margin-bottom: 20px !important;
+    background: var(--google-dark-surface) !important;
+    border: 1px solid var(--google-dark-border) !important;
+    border-radius: 8px;
 }
 
-/* Post author info */
 .message-cell.message-cell--user {
-  background-color: var(--google-background) !important;
-  border-right: 1px solid var(--google-light-gray) !important;
-  padding: 16px !important;
+    background: var(--google-dark-background) !important;
+    border-right: 1px solid var(--google-dark-border) !important;
 }
 
-/* Post content */
-.message-cell.message-cell--main {
-  padding: 16px !important;
+.message-body {
+    padding: 16px;
 }
 
-/* Post action bar (like, reply, etc.) */
 .message-actionBar .actionBar-action {
-  color: var(--google-gray) !important;
-  transition: color 0.3s ease !important;
+    color: var(--google-dark-secondary-text) !important;
 }
 
 .message-actionBar .actionBar-action:hover {
-  color: var(--google-blue) !important;
+    color: var(--google-accent-blue) !important;
+}
+
+/* --- Forms & Alerts --- */
+
+.formRow input[type="text"],
+.formRow input[type="password"],
+.formRow input[type="email"],
+.formRow textarea {
+    background-color: var(--google-dark-background) !important;
+    border: 1px solid var(--google-dark-border) !important;
+    color: var(--google-dark-primary-text) !important;
+    padding: 10px !important;
+    border-radius: 4px !important;
+}
+
+.formRow input[type="text"]:focus,
+.formRow input[type="password"]:focus,
+.formRow input[type="email"]:focus,
+.formRow textarea:focus {
+    border-color: var(--google-accent-blue) !important;
+}
+
+.button.button--primary {
+    background-color: var(--google-accent-blue) !important;
+    color: var(--google-dark-background) !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+}
+
+.block-body--error {
+    background-color: rgba(217, 48, 37, 0.2) !important; /* Red with low opacity */
+    border: 1px solid #d93025 !importa
+nt;
+    color: var(--google-dark-primary-text) !important;
+}
+
+/* --- Tabs & Structural Lists --- */
+
+.tabs--standalone {
+    background: var(--google-dark-surface) !important;
+    border-bottom: 1px solid var(--google-dark-border) !important;
+}
+
+.tabs-tab {
+    color: var(--google-dark-secondary-text) !important;
+}
+
+.tabs-tab.is-active {
+    color: var(--google-accent-blue) !important;
+    border-bottom-color: var(--google-accent-blue) !important;
+}
+
+.structItem {
+    border-bottom: 1px solid var(--google-dark-border) !important;
+    padding: 10px !important;
+}
+
+.structItem:last-of-type {
+    border-bottom: none !important;
+}
+
+.structItem-title {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+.structItem-meta {
+    font-size: 13px !important;
+    color: var(--google-dark-secondary-text) !important;
+}
+
+.button.button--link, .menu-trigger {
+    color: var(--google-accent-blue) !important;
 }
